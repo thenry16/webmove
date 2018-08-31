@@ -103,7 +103,11 @@
 
 
 .controls origin-input{
-    display: inline-block; padding: 6px 10px;border-radius: 0; border: 1px solid lightgrey; width: 80vw;font-family:Century Gothic;
+    display: inline-block; 
+    padding: 6px 10px;
+    border-radius: 0; 
+    border: 1px solid lightgrey;
+    font-family:Century Gothic;
 }
 
 .centered{
@@ -122,8 +126,9 @@
 .navBar {
     background-color: #3AAFA9;
     text-align: center;
-    height: 7%;
-    padding-top:-4vh;
+    height: 8%;
+    padding-top: 2%;
+    padding-bottom: 2%
 
 }
 
@@ -195,7 +200,7 @@ html, body {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     height: 32px;
-    width: 80vw;
+    width: 80%;
     max-width: 250px;
     outline: none;
 }
@@ -203,7 +208,7 @@ html, body {
 #origin-input,
 #destination-input {
     background-color: #fff;
-    font-size: 16px;
+    font-size: 2.5vh;
     font-weight: 3px;
     margin-left: 12px;
     padding: 0 11px 0 13px;
@@ -217,14 +222,12 @@ html, body {
 #origin-input-path,
 #destination-input-path {
     background-color: #fff;
-    font-size: 20px;
+    font-size: 2.5vh;
     font-weight: 300;
     padding: 0 11px 0 13px;
     text-overflow: ellipsis;
-
     height: 40px;
-    width: 80vw;
-    max-width: 280px;
+    max-width: 250px;
 }
 
 #origin-input-path:focus,
@@ -313,11 +316,11 @@ html, body {
     height: 5vh;
     font-size: 20px;
     line-height: 3px;
-    padding: 12px 20px;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    background-color: #2B7A78;
 }
 
 .sign_buttons{
@@ -329,7 +332,7 @@ html, body {
 .safetyTips div {
     border-radius: 5px;
     background-color: #f2f2f2;
-    max-width: 90%;
+    max-width: 80%;
 }
 
 .safetyTips h1{
@@ -337,11 +340,9 @@ html, body {
 }
 
 .safetyTips p{
-    font-size:5vw;
+    font-size:2.5vw;
     padding: 15px 15px;
 }
-
-
 
 .FAQtitle{
     text-decoration: underline;
@@ -361,4 +362,10 @@ html, body {
     text-align: center;
 }
 
-
+.nice {
+    position:relative; 
+    top:2vh; 
+    font-size:2.5vh; 
+    margin-bottom: 20px; 
+    margin-right:0.1vw;
+}

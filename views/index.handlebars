@@ -60,8 +60,8 @@
 
 
   <div class="navBar card-block">
-      <a href="/index" id="navigationBar hover" style="font-size: 200%; position: relative; top: 7%"><i class="fas fa-home"></i></a>
-      <a href="javascript:history.back()" style="font-size: 200%; float: left; padding-top:1%; padding-left: 7%"><i class="fas fa-chevron-left"></i></a>
+      <a href="/index" id="navigationBar hover" style="font-size: 180%; position: relative; top: 7%"><i class="fas fa-home"></i></a>
+      <a href="javascript:history.back()" style="font-size: 180%; float: left; padding-top:1%; padding-left: 7%"><i class="fas fa-chevron-left"></i></a>
       <i onclick="dropDown()" class="setting-dropdown fas fa-cog" style="color: white; float: right; padding-right: 10%;"></i>
       <div id="myDropdown" class="dropdown-contents" style="position: relative; left: 60%; height: 15vh; width: 40%">
           <div style="border-bottom: solid black">
@@ -75,75 +75,40 @@
 
 
 
-  {{#if viewAlt}}
-      <div align="center" class="cardboard safetyTips" style="position:relative;top:4vh;" >
-          <div class="card-block" style="border-radius: 4px;  background-color: #ffba66;" >
-              <div class="card-header" style=" background-color: #ffba66;">
-                  <h1 style="font-family: 'Apple Chancery'; font-size: 180%;  background-color: #ffba66;">Where do you want to go ?</h1>
-              </div>
-          </div>
-      </div>
-  {{else}}
       <div align="center" class="cardboard safetyTips" style="position:relative;top:6vh;" >
-          <div class="card-block" style="background-color: #2B7A78; border: 1px solid lightgray;border-radius: 4px;" >
+          <div class="card-block" style="background-color: #2B7A78; width:80%; border: 1px solid lightgray;border-radius: 4px;" >
               <div class="card-header" style="background-color: #2B7A78;">
                   <h1 style="color: white">Where do you want to go?</h1>
               </div>
           </div>
       </div>
-  {{/if}}
 
-
-<!--place holder-->
-
-
-<!--<div class="cardboard search" style="position:relative;top:5vh; padding:10px; border: 1px solid black;">-->
-  <!--<form action="/safePath" method="post">-->
-        <!--<div class="centered" style="position:relative;top:2vh;margin-bottom: 20px">-->
-            <!--<img src="images/A_Point.png" >-->
-            <!--<input required id="origin-input-path" type="text" name="start" value="{{start}}" placeholder="enter a starting location...">-->
-        <!--</div>-->
-        <!--<div class="form-group centered" style="position:relative;top:0vh;margin-bottom: 20px">-->
-            <!--<img src="images/B_Point.png">-->
-            <!--<input required id="destination-input-path" type="text" name="destination" value="{{destination}}" placeholder="enter a destination...">-->
-        <!--</div>-->
-
-        <!--<div class="form-group">-->
-            <!--<button id="searchButton" class="bouton btn-success" type="submit" style="position:relative;left:60vw;border-color:#2B7A78; background-color: #3AAFA9">Search</button>-->
-        <!--</div>-->
-  <!--</form>-->
-<!--</div>-->
-  <div style="position:relative; top:1vh;left:5vw;right:5vw; margin-right:10.3vw;">
-      <div class="cardboard search" style="position:relative;top:5vh;right:1vw;left:0.2vw; padding:8px; border: 1px solid lightgray;border-radius: 4px;">
+  <div style="position:relative; top:1vh; left:5vw; right:5vw; margin-right:10.3vw;padding-top:50px">
+      <div class="cardboard search">
           <form action="/safePath" method="post">
-              <div class="centered" style="position:relative;top:2vh;margin-bottom: 20px; margin-right:0.1vw;">
+              <div class="form-group centered nice">
                   <img src="images/A_Point.png" >
                   <input required id="origin-input-path" type="text" name="start" value="{{start}}" placeholder="enter a start...">
               </div>
-              <div class="form-group centered" style="position:relative;top:0vh;margin-bottom: 20px; margin-right:0.1vw;">
+              <div class="form-group centered nice">
                   <img src="images/B_Point.png">
                   <input required id="destination-input-path" type="text" name="destination" value="{{destination}}" placeholder="enter a destination...">
               </div>
-
-              <div class="form-group">
-                  <button id="searchButton" class="bouton btn-success" type="submit" style="position:relative;left:60vw; border-color:#2B7A78; background-color: #3AAFA9; padding-right:5vw;">Search</button>
+              <div class="form-group"style="padding-top:5%;padding-right:6%" align="right">
+                  <button class="bouton btn-success" type="submit">Search</button>
               </div>
           </form>
       </div>
   </div>
 
-
-
-
-
   {{#if viewAlt}}
       <br><br>
       <div class="col-md-6 main-div mx-auto" style="position: relative; top: 5%">
-          <img class="card-img-top centered" src="images/shiba.png" style="width: 48%; margin-left: 28%;">
+          <img class="card-img-top centered" src="images/raccoons.jpg" style="width: 100%; margin-left: 28%;">
       </div>
   {{else}}
       <div align="center" class="cardboard safetyTips" style="position:relative;top:15vh;" >
-          <div class="card-block"style="background-color: #2B7A78; border: 1px solid lightgray;
+          <div class="card-block"style="background-color: #2B7A78; width:80%;border: 1px solid lightgray;
     border-radius: 4px;">
               <div class="card-header" style="background-color: #2B7A78;" >
                   <h1 style="color:white">Safety tip of the day</h1>
