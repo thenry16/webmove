@@ -228,6 +228,7 @@ html, body {
     text-overflow: ellipsis;
     height: 40px;
     max-width: 250px;
+    width:80%;
 }
 
 #origin-input-path:focus,
