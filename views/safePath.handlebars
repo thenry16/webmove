@@ -1,0 +1,200 @@
+<!doctype html>
+
+<html>
+<head>
+    <title>MoveSafe - Safe Path</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/MoveSafe.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <script src="/js/API_Directions-complex.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDS6-vX7RQf9E6NV3F5rytl_Eh_ALQNIlE&callback=initMap">
+    </script>
+    <link href="/css/Directions-complex.css">
+    <script src="js/GooglePlaces.js"></script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="/css/bootstrap.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <link href="/css/MoveSafe.css" rel="stylesheet">
+
+
+    <link href="/css/Directions-complex.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <script src="/js/API_Directions-complex.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDS6-vX7RQf9E6NV3F5rytl_Eh_ALQNIlE&libraries=places&callback=initMap"
+            async defer></script>
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <script src="js/GooglePlaces.js"></script>
+    <link href="/css/MoveSafe.css" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+
+
+  <div class="topnav card-block">
+      <div>
+          <a id="navigationBarTitle" >Find a Safe Path</a>
+      </div>
+  </div>
+
+
+  <div class="navBar card-block">
+      <a href="/index" id="navigationBar hover" style="font-size: 200%; position: relative; top: -3%"><i class="fas fa-home"></i></a>
+      <a href="javascript:history.back()" style="font-size: 200%; float: left; position: relative; top: -2%; padding-left: 7%"><i class="fas fa-chevron-left"></i></a>
+      <i onclick="dropDowns()" class="setting-dropdown2 fas fa-cog" style="color: white; float: right; padding-right: 10%;"></i>
+      <div id="myDropdown2" class="dropdown-content2" >
+          <div style="border-bottom: solid black">
+              <a href="/FrequentlyAskedQuestions" style="color:black">FAQ</a>
+          </div>
+          <div>
+              <a href="/" style="color:black">Logout</a>
+          </div>
+      </div>
+  </div>
+
+
+
+  {{#if mapView}}
+<!--place holder--> 
+<div class="dropdown" style="background-color:whitesmoke; position:absolute; left:5vw; top:18vh;font-size:3vh; border-radius: 4px;">
+    <p display="inline;" style="position:absolute;left:15vw;top:6px" width="90vw" ><img src="images/search-black.png" height="15" width="15" style="position:relative;left:-10vw;top:-1px" >
+        Search for a new place...
+    </p>
+    <div class="dropdown-content" style="position:absolute;left:-12vw">
+    <br>
+    <form action="/safePath" method = "post">
+        <div class="form-group centered" style="position:absolute; top:2vh; left:13vw;">
+            <img src="images/A_Point.png" height="18" width="15">
+            <input required id="origin-input-path" class="controls"  type="text" value= "{{start}}" name="start" placeholder="enter a starting location" style="font-size:12px;width:69vw">
+        </div>
+        <div class="form-group centered" style="position:absolute; top:10vh; left:12vw;">
+            <img src="images/B_Point.png" height="18" width="20">
+            <input required id="destination-input-path" class="controls"  type="text" value="{{destination}}" name="destination" placeholder="enter a destination location" style="font-size:12px;width:69vw">
+        </div>
+
+        <div class="form-group centered" style="position:absolute; top:17vh;">
+                <button class="btn btn-primary" style="border-color:#2B7A78; margin:20px 0 0 241px; height:25px; line-height:10px;font-size:12px; background-color: #3AAFA9; font-family:Century Gothic;" type="submit">Search</button>
+        </div>
+  </form>
+  </div>
+</div>
+
+<div class="card-board centered" id="infoBar" class="pathInfo" style="position:relative; left:5vw; top:12vh;
+    border-radius: 4px;background-color:#2B7A78;color:white;
+">
+    <div class="row" style="position:relative;top:2vh;font-weight: bold;">
+        <p id="safetyLevel" class="col-6 col-md-4" style="position:relative;left:12px;">Path rating: 1</p>
+        <p id="ETA" class="col-6 col-md-4" style="position:relative;right:12px">ETA: 2 min</p>
+    </div>
+        <!--<p> Unsafe<img src="images/legend.png" height="30px">Safe</p>-->
+</div>
+<div class="card-board centered" id="infoBar" class="pathInfo" style="position:relative; left:5vw; top:11vh;height:5vh;">
+
+        <table id="mapLegend" align="center">
+            <tr style="font-size: 3vw" >
+                <td align="center">Safe</td>
+                <td width="13%" align="center" style="background-color: rgba(11,102,0, 0.4)">1</td>
+                <td width="13%" align="center" style="background-color: rgba(72,205,55,0.4)">2</td>
+                <td width="13%" align="center" style="background-color: rgba(220,242,218, 0.4)">3</td>
+                <td width="13%" align="center" style="background-color: rgba(255,102,102, 0.4)">4</td>
+                <td width="13%" align="center" style="background-color: rgba(178,0,24, 0.4)">5</td>
+                <td align="center">Unsafe</td>
+            </tr>
+        </table>
+</div>
+
+
+<!--map-->
+    <div style="border-right: solid black; border-bottom: solid black; border-left: solid black;position:relative; top:10vh;" width="80vw" id="map"></div>
+    <div id="panel"></div>
+</div>
+
+<!--information of path-->
+    <a href="/routing/{{start}}/{{destination}}"><button class="testButton bouton btn-success" style="border-color:#2B7A78; background-color: #3AAFA9; position:relative; top:12vh; left:5vw; width:90vw;height:8vh;">See directions</button></a>
+
+</div>
+
+<br><br><br>
+<div class="centered"style="position:relative;top:2vh">
+<p style="font-size: 12px; position:relative; top:3vh;font-style: italic;" >neighborhood data was provided by <img style="height:15px"src="http://www.pvhc.net/img8/lazfyirwsgqitzoqosou.jpg"></p>
+</div>
+
+<params id="routeIndex" value="0"></params>
+  {{else}}
+      <div class="cardboard search" style="position:relative;left:5vw; top:5vh" padding="10px">
+          <div style="width:80vw">
+              <p style="position:relative; font-size: 20px">{{message}}</p>
+          </div>
+          <form action="/safePath" method="post">
+              <div style="position:relative;top:2vh;margin-bottom: 20px">
+                  <input required id="origin-input-path" type="text" name="start" value="{{start}}" placeholder="enter a starting location...">
+              </div>
+              <div class="form-group" style="position:relative;top:0vh;margin-bottom: 20px">
+                  <input required id="destination-input-path" type="text" name="destination" value="{{destination}}" placeholder="enter a destination...">
+              </div>
+              <div class="form-group" style="position:relative;left:48vw">
+                  <button class="bouton btn-success" type="submit" style="border-color:#2B7A78; background-color: #3AAFA9">Search</button>
+              </div>
+          </form>
+      </div>
+  {{/if}}
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function(event) { 
+        document.getElementById("origin-input-path").value = "{{start}}";
+        document.getElementById("destination-input-path").value = "{{destination}}";
+    });
+</script>
+
+  <script>
+      function dropDowns() {
+          document.getElementById("myDropdown2").classList.toggle("show");
+      }
+
+      // Close the dropdown menu if the user clicks outside of it
+      window.onclick = function(event) {
+          if (!event.target.matches('.setting-dropdown2')) {
+
+              var dropdowns = document.getElementsByClassName("dropdown-content2");
+              var i;
+              for (i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                  if (openDropdown.classList.contains('show')) {
+                      openDropdown.classList.remove('show');
+                  }
+              }
+          }
+      }
+  </script>
+
+</body>
+</html>

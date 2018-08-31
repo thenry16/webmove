@@ -1,0 +1,16 @@
+{
+	"users": [
+		{
+			"name": "Sparrow",
+			"password": "HakunaMattata"			
+		},
+		{
+			"name": "Megan",
+			"password": "Lifeisbeautiful"			
+		},
+		{
+			"name": "Tiph",
+			"password": "DesCitronsGermaine"			
+		}
+	]
+}

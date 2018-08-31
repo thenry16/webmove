@@ -1,0 +1,49 @@
+<!doctype html>
+
+<html>
+<head>
+    <title>MoveSafe</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/MoveSafe.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div>
+        <h1 class="header">Find A Safe {{place}}</h1>
+    </div>
+
+
+
+<!--place holder--> 
+  <form>
+    <div class="form-group centered">       
+      <label style="display:inline-block" class="control-label col-sm-2" >Start:</label> 
+      <input required id="origin-input" class="controls" style="display: inline-block; padding: 6px 10px;border-radius: 0;border: 1px solid lightgrey; width: 500px;"  type="text" name="start" placeholder="{{start}}">
+      <input type="reset" value="x">
+    </div>
+
+    <div class="form-group centered">       
+      <label style="display:inline-block" class="control-label col-sm-2" >Destination:</label> 
+      <input required id="origin-input" class="controls" style="display: inline-block; padding: 6px 10px;border-radius: 0;border: 1px solid lightgrey;width: 500px;"  type="text" name="destination" placeholder="{{place}}">
+      <input type="reset" value="x">
+    </div>
+    <br>
+
+    <div class="form-group centered"> 
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit">Search</button>
+      </div>
+  </form>
+    </div>
+
+<div>
+    <img src="/images/PlaceHolderSafePath.png">
+</div>
+
+<script src="https://code.jquery.com/jquery.js"></script>
+</body>
+</html>
