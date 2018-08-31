@@ -39,20 +39,6 @@
     <script src="js/GooglePlaces.js"></script>
     <link href="/css/MoveSafe.css" rel="stylesheet">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </head>
 
 
@@ -67,25 +53,24 @@
 
 
   <div class="navBar card-block">
-      <a href="/index" id="navigationBar hover" style="font-size: 200%; position: relative; top: -3%"><i class="fas fa-home"></i></a>
-      <a href="javascript:history.back()" style="font-size: 200%; float: left; position: relative; top: -2%; padding-left: 7%"><i class="fas fa-chevron-left"></i></a>
-      <i onclick="dropDowns()" class="setting-dropdown2 fas fa-cog" style="color: white; float: right; padding-right: 10%;"></i>
-      <div id="myDropdown2" class="dropdown-content2" >
+      <a href="/index" id="navigationBar hover" style="font-size: 180%; position: relative; top: 7%"><i class="fas fa-home"></i></a>
+      <a href="javascript:history.back()" style="font-size: 180%; float: left; padding-top:1%; padding-left: 7%"><i class="fas fa-chevron-left"></i></a>
+      <i onclick="dropDown()" class="setting-dropdown fas fa-cog" style="color: white; float: right; padding-right: 10%;"></i>
+      <div id="myDropdown" class="dropdown-contents" style="position: relative; left: 60%; height: 15vh; width: 40%">
           <div style="border-bottom: solid black">
-              <a href="/FrequentlyAskedQuestions" style="color:black">FAQ</a>
+                <a href="/FrequentlyAskedQuestions" style="color:black;font-size:2.5vh">FAQ</a>
           </div>
           <div>
-              <a href="/" style="color:black">Logout</a>
+                <a href="/" style="color:black;font-size:2vh">Logout</a>
           </div>
       </div>
   </div>
 
 
-
   {{#if mapView}}
 <!--place holder--> 
 <div class="dropdown" style="background-color:whitesmoke; position:absolute; left:5vw; top:18vh;font-size:3vh; border-radius: 4px;">
-    <p display="inline;" style="position:absolute;left:15vw;top:6px" width="90vw" ><img src="images/search-black.png" height="15" width="15" style="position:relative;left:-10vw;top:-1px" >
+    <p display="inline;" style="position:absolute;left:15vw;top:6px;font-size:2.5vh" width="90vw" ><img src="images/search-black.png" height="15" width="15" style="position:relative;left:-10vw;top:-1px" >
         Search for a new place...
     </p>
     <div class="dropdown-content" style="position:absolute;left:-12vw">
